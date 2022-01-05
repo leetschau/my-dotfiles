@@ -1,0 +1,16 @@
+# SQL Group
+snippet se
+	SELECT ${2:col}
+	FROM ${1:table}
+	WHERE $3
+	INNER JOIN $4
+	   ON $5
+	GROUP BY $6
+	HAVING $0
+
+# CREATE TABLE on HIVE
+snippet ct
+	DROP TABLE IF EXISTS tmp.leo_${1:table};
+	CREATE TABLE tmp.leo_$1 AS
+	$0
+

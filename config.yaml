@@ -1,0 +1,33 @@
+config:
+  backup: true
+  banner: false
+  create: true
+  dotpath: dotfiles
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: false
+dotfiles:
+  d_fish:
+    src: config/fish
+    dst: ~/.config/fish
+    chmod: '700'
+  d_vimrcs:
+    src: config/vimrcs
+    dst: ~/.config/vimrcs
+    chmod: '700'
+    upignore:
+    - '*/fish'
+    - '*/ibus'
+    cmpignore:
+    - '*/fish'
+    - '*/ibus'
+  f_gitconfig:
+    src: gitconfig
+    dst: ~/.gitconfig
+profiles:
+  rintdeep:
+    dotfiles:
+    - d_fish
+    - d_vimrcs
+    - f_gitconfig
