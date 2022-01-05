@@ -25,9 +25,103 @@ dotfiles:
   f_gitconfig:
     src: gitconfig
     dst: ~/.gitconfig
+  f_tmux.conf:
+    src: tmux.conf
+    dst: ~/.tmux.conf
+    chmod: '644'
+  f_taskrc:
+    src: taskrc
+    dst: ~/.taskrc
+    chmod: '644'
+  f_zshrc:
+    src: zshrc
+    dst: ~/.zshrc
+    chmod: '644'
+  f_zshenv:
+    src: zshenv
+    dst: ~/.zshenv
+    chmod: '644'
+  f_i3_config:
+    src: i3/config
+    dst: ~/.i3/config
+    chmod: '644'
+  f_bash_aliases:
+    src: bash_aliases
+    dst: ~/.bash_aliases
+    chmod: '644'
+  f_vimrc:
+    src: vimrc
+    dst: ~/.vimrc
+    chmod: '644'
+  f_rifle.conf:
+    src: config/ranger/rifle.conf
+    dst: ~/.config/ranger/rifle.conf
+    chmod: '755'
+  f_xdefaults:
+    src: Xdefaults
+    dst: ~/.Xdefaults
+    chmod: '644'
+  f_xsessionrc:
+    src: xsessionrc
+    dst: ~/.xsessionrc
+    chmod: '755'
+  f_xinitrc:
+    src: xinitrc
+    dst: ~/.xinitrc
+  f_xinputrc:
+    src: xinputrc
+    dst: ~/.xinputrc
+  f_fzf.zsh:
+    src: fzf.zsh
+    dst: ~/.fzf.zsh
+    chmod: '755'
+  f_lichao.zsh-theme:
+    src: oh-my-zsh/custom/themes/lichao.zsh-theme
+    dst: ~/.oh-my-zsh/custom/themes/lichao.zsh-theme
+    chmod: '644'
+  f_xmonad.hs:
+    src: xmonad/xmonad.hs
+    dst: ~/.xmonad/xmonad.hs
+    chmod: '644'
+  f_xmobarrc:
+    src: config/xmobar/xmobarrc
+    dst: ~/.config/xmobar/xmobarrc
+    chmod: '644'
+  f_stalonetrayrc:
+    src: stalonetrayrc
+    dst: ~/.stalonetrayrc
+    chmod: '644'
 profiles:
-  rintdeep:
+  zshell:
+    dotfiles:
+    - f_zshrc
+    - f_zshenv
+    - f_lichao.zsh-theme
+  xmonad:
+    dotfiles:
+    - f_xmonad.hs
+    - f_xmobarrc
+    - f_stalonetrayrc
+  headless:
     dotfiles:
     - d_fish
     - d_vimrcs
     - f_gitconfig
+    - f_tmux.conf
+  tcserver:
+    dotfiles:
+    - f_tmux.conf
+    - f_taskrc
+    - f_i3_config
+    - f_bash_aliases
+    - f_vimrc
+    - f_rifle.conf
+    - f_xdefaults
+    - f_xsessionrc
+    - f_xinitrc
+    - f_xinputrc
+    - f_fzf.zsh
+    - f_lichao.zsh-theme
+    include:
+    - zshell
+    - xmonad

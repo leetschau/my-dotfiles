@@ -1,0 +1,12 @@
+PATH="$PATH:$HOME/.local/bin"
+PATH="$PATH:$HOME/.local/zeek/bin"
+PATH="$PATH:$HOME/apps/sysClone/scripts"
+PATH="$PATH:$HOME/apps/mermaid.js/node_modules/.bin"
+PATH="$PATH:$HOME/.nimble/bin:$HOME/.nimble/bin"
+PATH="$PATH:$HOME/.linuxbrew/bin"
+HOMEBREW_CACHE="$HOME/.linuxbrew/cache"
+HOMEBREW_LOGS="$HOME/.linuxbrew/logs"
+EDITOR=nvim
+
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
