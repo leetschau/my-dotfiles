@@ -91,6 +91,9 @@ dotfiles:
     src: stalonetrayrc
     dst: ~/.stalonetrayrc
     chmod: '644'
+  f_starship.toml:
+    src: config/starship.toml
+    dst: ~/.config/starship.toml
 profiles:
   zshell:
     dotfiles:
@@ -102,12 +105,13 @@ profiles:
     - f_xmonad.hs
     - f_xmobarrc
     - f_stalonetrayrc
-  headless:
+  rintdeep:
     dotfiles:
     - d_fish
     - d_vimrcs
     - f_gitconfig
     - f_tmux.conf
+    - f_starship.toml
   tcserver:
     dotfiles:
     - f_tmux.conf

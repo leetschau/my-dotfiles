@@ -1,0 +1,7 @@
+[conda]
+format = "[$symbol$environment](dimmed purple) "
+
+[custom.pip]
+command = "echo PIP:TUNA"
+when = "set -q PIP_INDEX_URL"
+style = "dimmed yellow"
