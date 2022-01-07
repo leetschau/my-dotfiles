@@ -105,14 +105,14 @@ profiles:
     - f_xmonad.hs
     - f_xmobarrc
     - f_stalonetrayrc
-  rintdeep:
+  headless:
     dotfiles:
     - d_fish
     - d_vimrcs
     - f_gitconfig
     - f_tmux.conf
     - f_starship.toml
-  tcserver:
+  tiling_window:
     dotfiles:
     - f_tmux.conf
     - f_taskrc

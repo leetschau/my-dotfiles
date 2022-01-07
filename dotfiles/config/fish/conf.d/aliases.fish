@@ -2,8 +2,8 @@ if not status is-interactive
   exit 0
 end
 
-abbr ra ranger
-abbr l ls -la
+abbr ddp dotdrop
+
 abbr ga git add -A
 abbr gs git status
 abbr gci git commit -m
@@ -13,6 +13,10 @@ abbr glg git log --graph --abbrev-commit --decorate --format=format:'%C(bold blu
 abbr gco git checkout
 abbr gph git push
 abbr gpl git pull
+
+abbr l ls -la
+
+abbr ra ranger
 
 abbr tl tmux ls
 abbr ta tmux attach -t
