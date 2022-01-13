@@ -2,8 +2,9 @@ if not status is-interactive
   exit 0
 end
 
-abbr ddp dotdrop
-
+abbr py python3
+abbr ra ranger
+abbr l ls -la
 abbr ga git add -A
 abbr gs git status
 abbr gci git commit -m
@@ -14,10 +15,8 @@ abbr gco git checkout
 abbr gph git push
 abbr gpl git pull
 
-abbr l ls -la
-
-abbr ra ranger
-
 abbr tl tmux ls
 abbr ta tmux attach -t
 abbr tn tmux new -A -s
+
+alias vi "python3 ~/.config/nvim/vi.py"

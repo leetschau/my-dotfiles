@@ -12,16 +12,10 @@ dotfiles:
     src: config/fish
     dst: ~/.config/fish
     chmod: '700'
-  d_vimrcs:
-    src: config/vimrcs
-    dst: ~/.config/vimrcs
+  d_neovim:
+    src: config/nvim
+    dst: ~/.config/nvim
     chmod: '700'
-    upignore:
-    - '*/fish'
-    - '*/ibus'
-    cmpignore:
-    - '*/fish'
-    - '*/ibus'
   f_gitconfig:
     src: gitconfig
     dst: ~/.gitconfig
@@ -111,7 +105,7 @@ profiles:
   headless:
     dotfiles:
     - d_fish
-    - d_vimrcs
+    - d_neovim
     - f_gitconfig
     - f_tmux.conf
     - f_starship.toml
