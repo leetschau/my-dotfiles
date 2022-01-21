@@ -9,7 +9,7 @@ xmodmap -e "pointer = 3 2 1"
 setxkbmap -option caps:swapescape -option ctrl:swap_lwin_lctl -option ctrl:swap_rwin_rctl
 
 stalonetray &
-fcitx &
+fcitx5 &
 copyq &
 goldendict &
 devmon &
