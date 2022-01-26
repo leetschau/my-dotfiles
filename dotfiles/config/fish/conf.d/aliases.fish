@@ -16,9 +16,10 @@ abbr gpl git pull
 
 abbr l ls -la
 
-abbr pa sudo pacman
-
+abbr op rifle
 abbr ra ranger
+
+abbr pa sudo pacman
 
 abbr py python3
 

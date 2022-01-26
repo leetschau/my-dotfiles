@@ -16,6 +16,10 @@ dotfiles:
     src: config/nvim
     dst: ~/.config/nvim
     chmod: '700'
+  d_ranger:
+    src: config/ranger
+    dst: ~/.config/ranger
+    chmod: '700'
   f_gitconfig:
     src: gitconfig
     dst: ~/.gitconfig
@@ -47,10 +51,6 @@ dotfiles:
     src: vimrc
     dst: ~/.vimrc
     chmod: '644'
-  f_rifle.conf:
-    src: config/ranger/rifle.conf
-    dst: ~/.config/ranger/rifle.conf
-    chmod: '755'
   f_xdefaults:
     src: Xdefaults
     dst: ~/.Xdefaults
@@ -106,6 +106,7 @@ profiles:
     dotfiles:
     - d_fish
     - d_neovim
+    - d_ranger
     - f_gitconfig
     - f_tmux.conf
     - f_starship.toml
@@ -117,7 +118,6 @@ profiles:
     - f_i3_config
     - f_bash_aliases
     - f_vimrc
-    - f_rifle.conf
     - f_xdefaults
     - f_xsessionrc
     - f_xinitrc
