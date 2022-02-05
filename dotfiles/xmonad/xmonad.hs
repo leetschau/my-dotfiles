@@ -13,6 +13,7 @@ import XMonad.Util.Ungrab
 
 import XMonad.Layout.Magnifier
 import XMonad.Layout.ThreeColumns
+import XMonad.Layout.SimpleFloat
 
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.InsertPosition
@@ -26,7 +27,7 @@ main = xmonad
      . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey
      $ myConfig
 
-myTerminal = "urxvt"
+myTerminal = "alacritty"
 myConfig = def
     { terminal = myTerminal
     , modMask = mod1Mask
@@ -47,7 +48,7 @@ myConfig = def
     , ("M-s", windows W.swapMaster)
     ]
 
-myLayout = Mirror tiled ||| Full ||| tiled
+myLayout = Mirror tiled ||| Full ||| tiled ||| simpleFloat
   where
     tiled   = Tall nmaster delta ratio
     nmaster = 1

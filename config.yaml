@@ -91,6 +91,10 @@ dotfiles:
   f_ptpython:
     src: config/ptpython/config.py
     dst: ~/.config/ptpython/config.py
+  f_okular_shortcuts:
+    src: config/okular/mykeys.shortcuts
+    dst: ~/.config/okular/mykeys.shortcuts
+    chmod: '600'
 profiles:
   zshell:
     dotfiles:
@@ -124,6 +128,7 @@ profiles:
     - f_xinputrc
     - f_fzf.zsh
     - f_lichao.zsh-theme
+    - f_okular_shortcuts
     include:
     - zshell
     - xmonad

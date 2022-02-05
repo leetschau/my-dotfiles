@@ -1,5 +1,5 @@
 Config { overrideRedirect = False
-       , font     = "xft:iosevka-10"
+       , font     = "xft:Bitstream Vera:pixelsize=14:antialias=true:hinting=true"
        , fgColor  = "#f8f8f2"
        , position = TopW L 85
        , commands = [ Run Weather "ZBAA"
