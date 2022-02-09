@@ -26,6 +26,7 @@ vnoremap ; :
 vnoremap : ;
 nnoremap <leader>e :e $MYVIMRC<CR>
 nnoremap <leader>s :so $MYVIMRC<CR>
+nnoremap <leader>h :set hls!<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -37,5 +38,3 @@ highlight OverLength ctermfg=cyan guibg=#592929
 match OverLength /\%81v.\+/
 
 cabbrev ss set spell!<CR>
-
-
