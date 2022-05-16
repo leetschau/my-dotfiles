@@ -36,35 +36,8 @@ PS1='$(show_virtual_env)'$PS1
 # Hook for desk activation
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 
-alias -s lisp="XDG_CONFIG_HOME=$HOME/.config/vimrcs/lisp nvim $@"
-alias -s {R,Rmd}="XDG_CONFIG_HOME=$HOME/.config/vimrcs/R nvim $@"
-alias -s {sql,hql}="XDG_CONFIG_HOME=$HOME/.config/vimrcs/sql nvim $@"
-alias -s py="XDG_CONFIG_HOME=$HOME/.config/vimrcs/python nvim $@"
-alias -s {adoc,asciidoc}="XDG_CONFIG_HOME=$HOME/.config/vimrcs/asciidoc nvim $@"
-alias -s {re,ml}="XDG_CONFIG_HOME=$HOME/.config/vimrcs/reasonml nvim $@"
-alias -s {fsi,fsx,fs}="XDG_CONFIG_HOME=$HOME/.config/vimrcs/fsharp nvim $@"
-alias -s {hs,lhs}="XDG_CONFIG_HOME=$HOME/.config/vimrcs/haskell nvim $@"
-alias -s v="XDG_CONFIG_HOME=$HOME/.config/vimrcs/vlang nvim $@"
-alias -s nim="XDG_CONFIG_HOME=$HOME/.config/vimrcs/nim nvim $@"
-alias -s rs="XDG_CONFIG_HOME=$HOME/.config/vimrcs/rust nvim $@"
-alias vi="XDG_CONFIG_HOME=$HOME/.config/vimrcs/text nvim $@"
+alias vi="/usr/bin/python3 ~/.config/nvim/vi.py"
 
 # zsh-vi-mode config:
 zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 
-# execute command in container openeuler
-oer() {
-  set -e
-  case $(podman ps -a --filter "name=openeuler" --format '{{.State}}') in
-    Up*)
-      ;;
-    Exit*) podman start openeuler
-      ;;
-    *) echo "Bad status, check with 'podman ps -a'"
-      exit 3
-      ;;
-  esac
-  wdir=$1
-  shift 1
-  podman exec --workdir $wdir openeuler "$@"
-}

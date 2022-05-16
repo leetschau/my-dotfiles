@@ -5,14 +5,15 @@ import subprocess as sp
 adoc = frozenset(['adoc', 'asdiidoc'])
 fs = frozenset(['fs', 'fsi', 'fsx'])
 hs = frozenset(['hs', 'lhs'])
+julia = frozenset(['jl'])
 lisp = frozenset(['lisp'])
 ml = frozenset(['ml', 're'])
 py = frozenset(['py'])
 R = frozenset(['R', 'Rmd'])
 sql = frozenset(['hql', 'sql'])
 
-file_types = {adoc: 'adoc', fs: 'fsharp', hs: 'haskell', lisp: 'lisp',
-        ml: 'reasonml', py: 'python', R: 'R', sql: 'sql'}
+file_types = {adoc: 'adoc', fs: 'fsharp', hs: 'haskell', julia: 'julia',
+              lisp: 'lisp', ml: 'reasonml', py: 'python', R: 'R', sql: 'sql'}
 
 usage = """Usage: vi -h | <file> [as <extension>]
 Examples: vi my-script.py
