@@ -11,9 +11,11 @@ ml = frozenset(['ml', 're'])
 py = frozenset(['py'])
 R = frozenset(['R', 'Rmd'])
 sql = frozenset(['hql', 'sql'])
+clang = frozenset(['c'])
 
 file_types = {adoc: 'adoc', fs: 'fsharp', hs: 'haskell', julia: 'julia',
-              lisp: 'lisp', ml: 'reasonml', py: 'python', R: 'R', sql: 'sql'}
+              lisp: 'lisp', ml: 'reasonml', py: 'python', R: 'R',
+              sql: 'sql', clang: 'c'}
 
 usage = """Usage: vi -h | <file> [as <extension>]
 Examples: vi my-script.py
