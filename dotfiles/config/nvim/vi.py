@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 import subprocess as sp
 
-adoc = frozenset(['adoc', 'asdiidoc'])
+adoc = frozenset(['adoc', 'asciidoc'])
 fs = frozenset(['fs', 'fsi', 'fsx'])
 hs = frozenset(['hs', 'lhs'])
 julia = frozenset(['jl'])
@@ -13,7 +13,7 @@ R = frozenset(['R', 'Rmd'])
 sql = frozenset(['hql', 'sql'])
 clang = frozenset(['c'])
 
-file_types = {adoc: 'adoc', fs: 'fsharp', hs: 'haskell', julia: 'julia',
+file_types = {adoc: 'asciidoc', fs: 'fsharp', hs: 'haskell', julia: 'julia',
               lisp: 'lisp', ml: 'reasonml', py: 'python', R: 'R',
               sql: 'sql', clang: 'c'}
 

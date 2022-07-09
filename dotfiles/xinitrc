@@ -14,6 +14,7 @@ copyq &
 goldendict &
 devmon &
 flameshot &
+udiskie --smart-tray --notify -f 'alacritty --command ranger' &
 feh --bg-fill --no-fehbg ~/Pictures/ui8VNo.webp
 
 autocutsel -fork -selection CLIPBOARD
