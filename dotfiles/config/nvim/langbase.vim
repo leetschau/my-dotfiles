@@ -12,4 +12,5 @@ VAMActivate
   \ github:preservim/vimux
   \ github:sheerun/vim-polyglot
   \ github:preservim/tagbar
+  \ github:tpope/vim-unimpaired
 
