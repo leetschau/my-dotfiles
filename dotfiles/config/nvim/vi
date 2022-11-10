@@ -20,7 +20,8 @@ lang_extensions = {
         'python': {'py'},
         'R': {'R'},
         'reasonml': {'re'},
-        'sql': {'sql'}
+        'sql': {'sql'},
+        'zeek': {'zeek'},
 }
 
 usage = """Usage: vi -h | <file> [as <lang-name>]
