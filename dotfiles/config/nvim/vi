@@ -16,10 +16,12 @@ lang_extensions = {
         'haskell': {'hs', 'lhs'},
         'julia': {'jl'},
         'lisp': {'lisp'},
+        'nim': {'nim'},
         'ocaml': {'ml'},
         'python': {'py'},
         'R': {'R'},
         'reasonml': {'re'},
+        'rust': {'rs'},
         'sql': {'sql'},
         'zeek': {'zeek'},
 }
