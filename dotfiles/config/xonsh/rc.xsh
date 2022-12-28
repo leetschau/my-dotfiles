@@ -8,7 +8,7 @@ xontrib load hist_navigator
 aliases['ddp'] = 'dotdrop'
 
 aliases['ga'] = 'git add -A'
-aliases['gci'] = 'git commmit'
+aliases['gci'] = 'git commit'
 aliases['gco'] = 'git checkout'
 aliases['gd'] = 'git diff'
 aliases['gl'] = 'git log '
