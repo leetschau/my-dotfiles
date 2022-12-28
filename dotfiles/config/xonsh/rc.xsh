@@ -24,4 +24,4 @@ aliases['ta'] = 'tmux attach -t'
 aliases['tl'] = 'tmux ls'
 aliases['tn'] = 'tmux new -A -s'
 
-aliases['vi'] = "python3 ~/.config/nvim/vi.py"
+aliases['vi'] = "python3 ~/.config/nvim/vi"

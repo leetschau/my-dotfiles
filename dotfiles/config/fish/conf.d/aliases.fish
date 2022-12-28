@@ -27,4 +27,4 @@ abbr tl tmux ls
 abbr ta tmux attach -t
 abbr tn tmux new -A -s
 
-alias vi "python3 ~/.config/nvim/vi.py"
+alias vi "python3 ~/.config/nvim/vi"
