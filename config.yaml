@@ -95,6 +95,9 @@ dotfiles:
     src: config/okular/mykeys.shortcuts
     dst: ~/.config/okular/mykeys.shortcuts
     chmod: '600'
+  d_xonsh:
+    src: config/xonsh
+    dst: ~/.config/xonsh
 profiles:
   zshell:
     dotfiles:
@@ -115,6 +118,7 @@ profiles:
     - f_tmux.conf
     - f_starship.toml
     - f_ptpython
+    - d_xonsh
   tiling_window:
     dotfiles:
     - f_tmux.conf
