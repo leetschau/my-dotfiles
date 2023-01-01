@@ -18,7 +18,7 @@ lang_extensions = {
         'lisp': {'lisp'},
         'nim': {'nim'},
         'ocaml': {'ml'},
-        'python': {'py'},
+        'python': {'py', 'xsh'},
         'R': {'R'},
         'reasonml': {'re'},
         'rust': {'rs'},
@@ -37,7 +37,8 @@ vimrc_root = Path.home() / '.config/nvim'
 
 def edit_with_type(lang: str):
     sp.run(['cp', vimrc_root / f"{lang}.vim", vimrc_root / 'init.vim'])
-    sp.run(['nvim', sys.argv[1]])
+    vft = 'markdown' if lang == 'text' else lang
+    sp.run(['nvim', f"+set filetype={vft}", sys.argv[1]])
     sys.exit(0)
 
 
