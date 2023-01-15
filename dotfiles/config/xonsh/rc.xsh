@@ -1,7 +1,8 @@
-$PROMPT = '{YELLOW}{env_name}{BLUE}{user}@{hostname}:{GREEN}{cwd} {ITALIC_YELLOW}{gitstatus} {RESET}\n> '
-$RIGHT_PROMPT = '{localtime}'
+$PROMPT = '{YELLOW}{env_name}{BLUE}{user}@{hostname}:{GREEN}{cwd} {localtime} {ITALIC_YELLOW}{gitstatus} {RESET}\n> '
 
 $AUTO_CD = True
+
+$XONSH_COLOR_STYLE='paraiso-dark'
 
 xontrib load hist_navigator
 
@@ -24,4 +25,4 @@ aliases['ta'] = 'tmux attach -t'
 aliases['tl'] = 'tmux ls'
 aliases['tn'] = 'tmux new -A -s'
 
-aliases['vi'] = "python3 ~/.config/nvim/vi"
+aliases['vi'] = "python3 ~/.config/nvim/vi_lua_conf.py"

@@ -5,6 +5,7 @@ vim.opt.softtabstop = 2
 vim.opt.number = true
 vim.opt.wrap = false
 vim.opt.spelllang = {'en', 'cjk'}
+vim.opt.mouse = ""
 
 vim.g.mapleader = ','
 
