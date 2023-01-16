@@ -24,7 +24,8 @@ iron.setup {
         command = {"zsh"}
       },
       julia = { command = {"julia"} },
-      python = { command = {"python"} }
+      python = { command = {"/home/leo/docs/drift-study/.venv/bin/xonsh"} },
+      r = { command = { "R" } },
       -- When execute in a virtualenv, change command path to the full path of
       -- Python interpreter provided by `poetry env info` or something else.
       -- For example: "/home/leo/.cache/pypoetry/virtualenvs/driftstudy-NYOhBOOU-py3.10/bin/xonsh"
