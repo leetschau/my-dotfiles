@@ -10,3 +10,5 @@ EDITOR=nvim
 
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
+
+export LUA_PATH=$HOME/.config/nvim/?.lua
