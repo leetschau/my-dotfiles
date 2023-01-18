@@ -1,4 +1,5 @@
 import sys
+import re
 import argparse
 from typing import List, Dict
 from pathlib import Path
@@ -31,6 +32,7 @@ def generate_plugins_script(plugins: List[str], pm: str) -> str:
 
 def synthetic_config_path(fpath: str,
                           pm: str,
+                          pyi: str,
                           ft_maps: Dict[str, List[str]]) -> str:
 
     edited_file_suffix = Path(fpath).suffix[1:]  # [1:] to remove the leading `.` if exists
@@ -43,9 +45,20 @@ def synthetic_config_path(fpath: str,
 
     final_conf_path = CONF_ROOT / 'init.lua'
     lang_conf = Path(CONF_ROOT / (lang + EXT)).read_text()
+    final_conf_path.write_text(f"{lang_conf}\n{plugin_script}")
+    # update Python interpreter if specified:
+    if pyi is None:
+        return str(final_conf_path)
 
-    with open(final_conf_path, 'w') as f:
-        f.write(f"{lang_conf}\n{plugin_script}")
+    lines = (CONF_ROOT / 'langbase.lua').read_text().splitlines()
+    (CONF_ROOT / 'langbase.lua').write_text(
+            '\n'.join(
+                map(lambda x: re.sub(r'(.*")(.*)(".*)',
+                                     rf'\1{pyi}\3',
+                                     x)
+                              if x.strip().startswith('python = { command = {')
+                              else x,
+                    lines)))
     return str(final_conf_path)
 
 def parse_args(fts: List[str],
@@ -63,12 +76,25 @@ def parse_args(fts: List[str],
                         dest='plugin_manager',
                         metavar='PM',
                         help='which plugin manager to use [paq|vam], default: paq')
+    parser.add_argument('-i',
+                        dest='py_interpreter',
+                        metavar='INTERPRETER',
+                        help='''Full path of Python interpreter.
+In a virtualenv, get the path with `poetry env info` or something alike.
+For example: /home/leo/.cache/pypoetry/virtualenvs/driftstudy-NYOhBOOU-py3.10/bin/python.
+Other interpreters, such as `ipython`, `ptipython`, `xonsh` are also valid.''')
     return parser.parse_args()
 
 def main():
     args = parse_args(FTYPES.keys(), PLUGINS, DEFAULT_PLUGIN)
     if len(args.files) > 0:
-        sp.run(['nvim', '-u', synthetic_config_path(args.files[0], args.plugin_manager, FTYPES)] + args.files)
+        sp.run(['nvim',
+                '-u',
+                synthetic_config_path(args.files[0],
+                                      args.plugin_manager,
+                                      args.py_interpreter,
+                                      FTYPES)
+                ] + args.files)
     else:
         sp.run(['nvim'])
 
