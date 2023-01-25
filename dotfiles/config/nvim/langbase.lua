@@ -13,9 +13,11 @@ require "text"
 vim.g.ale_enabled = 1
 vim.opt.colorcolumn = "80"
 
-local iron = require("iron.core")
-local view = require("iron.view")
+local status, module = pcall(require, 'iron.core')
+local iron = status and module or nil
 
+if iron ~= nil then
+local view = require("iron.view")
 iron.setup {
   config = {
     scratch_repl = true,
@@ -24,7 +26,7 @@ iron.setup {
         command = {"zsh"}
       },
       julia = { command = {"julia"} },
-      python = { command = {"/home/leo/docs/drift-study/.venv/bin/xonsh"} },
+      python = { command = {"python"} },
       r = { command = { "radian" } },
     },
     repl_open_cmd = view.split.vertical.topleft("50%"),
@@ -48,6 +50,7 @@ iron.setup {
   },
   ignore_blank_lines = true,
 }
+end
 
 vim.keymap.set('n', '<space>rs', '<cmd>IronRepl<cr>')
 vim.keymap.set('n', '<space>rr', '<cmd>IronRestart<cr>')

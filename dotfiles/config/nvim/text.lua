@@ -1,8 +1,12 @@
 require "base"
 
-require("symbols-outline").setup({
-  fold_markers = { '>', 'V' },
-  auto_close = false,})
+local status, module = pcall(require, 'symbols-outline')
+local symol = status and module or nil
+if symol ~= nil then
+  symol.setup({
+    fold_markers = { '>', 'V' },
+    auto_close = false,})
+end
 
 vim.keymap.set('n', '<leader>o', ':SymbolsOutline<cr>')
 -- pkg: easymotion/vim-easymotion
