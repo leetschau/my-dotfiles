@@ -1,5 +1,10 @@
 require "base"
 
+require("symbols-outline").setup({
+  fold_markers = { '>', 'V' },
+  auto_close = false,})
+
+vim.keymap.set('n', '<leader>o', ':SymbolsOutline<cr>')
 -- pkg: easymotion/vim-easymotion
 -- pkg: ervandew/supertab
 -- pkg: geoffharcourt/vim-matchit
@@ -14,7 +19,7 @@ require "base"
 -- pkg: scrooloose/nerdtree
 -- pkg: szw/vim-maximizer
 -- pkg: vim-airline/vim-airline
--- pkg: vim-voom/VOom
+-- pkg: simrat39/symbols-outline.nvim
 
 vim.cmd [[
   " airline
@@ -72,9 +77,4 @@ vim.cmd [[
   " easymotion
   let g:EasyMotion_smartcase = 1
   nmap f <Plug>(easymotion-overwin-f2)
-
-  " Voom outline
-  let g:voom_tree_placement = "right"
-  let g:voom_python_versions = [3]
-  let g:voom_tree_width = 40
 ]]

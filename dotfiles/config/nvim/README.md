@@ -10,6 +10,14 @@ Then add the following codes into your rc file:
 
 Now `vi -h` and happy coding!
 
+## When Keyboard Shortcut Not Work
+
+When keyboard shortcut (for example, `,o` to open SymbolOutliner) doesn't
+work and there's no error message, it's probably the corresponding plugin
+doesn't be installed yet. Run `:PaqInstall` in neovim and restart it.
+Then try the shortcut again.
+If still no luck, Run `:PaqList` to see if the plugin is installed successfully.
+
 ## REPL in Editor
 
 ### Usage
