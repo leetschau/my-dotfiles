@@ -4,8 +4,6 @@ $AUTO_CD = True
 
 $XONSH_COLOR_STYLE='paraiso-dark'
 
-xontrib load hist_navigator
-
 aliases['ddp'] = 'dotdrop'
 
 aliases['ga'] = 'git add -A'
@@ -26,3 +24,12 @@ aliases['tl'] = 'tmux ls'
 aliases['tn'] = 'tmux new -A -s'
 
 aliases['vi'] = "python3 ~/.config/nvim/vi_lua_conf.py"
+
+xontrib load hist_navigator
+
+# fzf config
+xontrib load fzf-widgets
+$fzf_history_binding = "c-r"
+$fzf_ssh_binding = "c-s"
+$fzf_file_binding = "c-t"
+$fzf_dir_binding = "c-g"
