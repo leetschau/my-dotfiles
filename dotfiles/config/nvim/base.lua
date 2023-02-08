@@ -22,7 +22,7 @@ vim.keymap.set('n', '<C-L>', '<C-w><C-L>')
 vim.keymap.set('t', '<C-H>', '<C-w><C-H>')
 vim.keymap.set('t', '<C-J>', '<C-w><C-J>')
 vim.keymap.set('t', '<C-K>', '<C-w><C-K>')
-vim.keymap.set('t', '<C-L>', '<C-w><C-L>')
+vim.keymap.set('t', '<C-L>', [[<C-\><C-n><C-w><C-L>]])
 
 vim.keymap.set('n', '<leader>h', ':set hls!<CR>')
 -- vim.keymap.set('n', '<leader>e', ':edit $MYVIMRC<cr>') not work
