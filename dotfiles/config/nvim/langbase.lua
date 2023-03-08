@@ -32,7 +32,7 @@ iron.setup {
     repl_open_cmd = view.split.vertical.topleft("50%"),
   },
   keymaps = {
-    send_motion = "<space>sc",
+    send_motion = "<space>v",
     visual_send = "<space>v",
     send_file = "<space>f",
     send_line = "<space>l",
@@ -56,3 +56,4 @@ vim.keymap.set('n', '<space>rs', '<cmd>IronRepl<cr>')
 vim.keymap.set('n', '<space>rr', '<cmd>IronRestart<cr>')
 vim.keymap.set('n', '<space>rf', '<cmd>IronFocus<cr>')
 vim.keymap.set('n', '<space>rh', '<cmd>IronHide<cr>')
+vim.keymap.set('n', '<space>w', [[yaw<C-w><C-w>pa<cr><C-\><C-n><C-w><C-w>]])

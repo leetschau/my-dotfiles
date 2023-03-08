@@ -9,5 +9,4 @@ vim.keymap.set('n', '<space>a', 'yy<C-w><C-L>Go<esc>p2x<C-w><C-H>')  -- here 2x 
 vim.keymap.set('v', '<space>a', 'y<C-w><C-L>Go<esc>p=G<C-w><C-H>')
 
 -- executed in editor:
-vim.keymap.set('v', '<space>v', 'y<C-w><C-H>pa<cr><esc><C-w><C-L>')
-vim.keymap.set('v', '<space>p', 's%cpaste<cr>--<esc>Pk')  -- add cpaste to paste block into IPython REPL
+vim.keymap.set('v', '<space>v', [[y<C-w><C-w>pa<cr><C-\><C-n><C-w><C-w>]])
