@@ -28,7 +28,13 @@ which is now written in julia.lua. Later it maybe moved to text.lua.
 
 Or you can use `:map` to list loaded keyboard shortcuts in editor session.
 
-## vi Starup Script
+## vi Startup Script
+
+The `-i` option is the executable name (in your $PATH) or absolute path of the interpreter embedded in vi,
+such as `julia`, `ruby`, `python`, `ipython`, `xonsh`, `R`, etc.
+When the interpreter is Python in a virtualenv,
+get the path with `poetry env info` or something alike,
+for example, "~/.cache/pypoetry/virtualenvs/driftstudy-NYOhBOOU-py3.10/bin/python".
 
 ### On File Type Definitions
 

@@ -36,9 +36,7 @@ PS1='$(show_virtual_env)'$PS1
 # Hook for desk activation
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 
-alias vi="python $HOME/.config/nvim/vi_lua_conf.py"
-alias vio="python $HOME/.config/nvim/vi_vam.py"
-
+alias vi="python $HOME/.config/nvim/vi.py"
 
 # zsh-vi-mode config:
 zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
