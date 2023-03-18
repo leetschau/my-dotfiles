@@ -98,6 +98,9 @@ dotfiles:
   d_xonsh:
     src: config/xonsh
     dst: ~/.config/xonsh
+  f_startup.jl:
+    src: julia/config/startup.jl
+    dst: ~/.julia/config/startup.jl
 profiles:
   zshell:
     dotfiles:
@@ -136,3 +139,6 @@ profiles:
     include:
     - zshell
     - xmonad
+  julia:
+    dotfiles:
+    - f_startup.jl
