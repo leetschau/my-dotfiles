@@ -88,6 +88,7 @@ FTYPES: Dict[str, List[str]] = {
     'c': ['c', 'h'],
     'fsharp': ['fs', 'fsi', 'fsx'],
     'haskell': ['hs', 'lhs'],
+    'janet': ['janet'],
     'julia': ['jl'],
     'lisp': ['lisp'],
     'text': ['md', 'Rmd'],

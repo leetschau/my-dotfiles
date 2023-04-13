@@ -26,8 +26,8 @@ vim.keymap.set('t', '<C-L>', [[<C-\><C-n><C-w><C-L>]])
 
 vim.keymap.set('n', '<leader>h', ':set hls!<CR>')
 -- vim.keymap.set('n', '<leader>e', ':edit $MYVIMRC<cr>') not work
-vim.keymap.set('n', '<leader>e', ':edit ' .. vim.call('stdpath', 'config') .. '/init.lua<cr>')
-vim.keymap.set('n', '<leader>s', ':source ' .. vim.call('stdpath', 'config') .. '/init.lua <cr>')
+vim.keymap.set('n', '<leader>ce', ':edit ' .. vim.call('stdpath', 'config') .. '/init.lua<cr>')
+vim.keymap.set('n', '<leader>cs', ':source ' .. vim.call('stdpath', 'config') .. '/init.lua <cr>')
 
 vim.cmd('colorscheme slate')
 vim.cmd('cabbrev ss set spell!<CR>')
