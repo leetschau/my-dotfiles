@@ -95,6 +95,7 @@ FTYPES: Dict[str, List[str]] = {
     'nim': ['nim'],
     'ocaml': ['ml'],
     'python': ['py', 'xsh'],
+    'quarto': ['qmd'],
     'r': ['R'],
     'reason': ['re'],
     'rust': ['rs'],
