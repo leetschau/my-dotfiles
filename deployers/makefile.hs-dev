@@ -1,0 +1,52 @@
+SHELL := zsh
+
+pypath := ~/.local/opt/python-3.10.12/
+sspath := ~/warez/starship
+dotfiles_repo := git@github.com\:leetschau/my-dotfiles.git
+pipx_path := ~/.local/pipx/
+pppath := ~/.local/share/nvim/site/pack/paqs
+
+PYTAR := python.tgz
+DTFILES := mydotfiles
+PYAPPS := pipx_apps.tgz
+PAQTAR := paq_plugins.tgz
+DATADIR := data
+DFILE = data.tgz
+
+python: $(pypath)
+	tar czf $(PYTAR) -C $(shell dirname $(pypath)) $(shell basename $(pypath))
+
+dotfiles:
+	git clone $(dotfiles_repo) $(DTFILES)
+
+pipx-apps: $(pipx_path)
+	tar czf $(PYAPPS) -C $(shell dirname $(pipx_path)) $(shell basename $(pipx_path))
+
+paq_plugins: $(pppath)
+	tar czf $(PAQTAR) -C $(shell dirname $(pppath)) $(shell basename $(pppath))
+
+build: python $(sspath) dotfiles pipx-apps paq_plugins
+	mkdir $(DATADIR)
+	mv *.tgz $(DTFILES) $(DATADIR)
+	cp $(sspath) $(DATADIR)
+	tar czf $(DFILE) $(DATADIR)
+	rm -rf $(DATADIR)
+
+clean:
+	rm -rf $(DATADIR)
+	rm -rf $(DTFILES)
+
+install-sys-apps-ubuntu:
+	apt install -y silversearcher-ag autojump fd-find fish fzf neovim tree
+
+install-sys-apps-archlinux:
+	pacman -S base-devel fd fish git git-delta openssh the_silver_searcher tree
+# TODO
+
+user:
+	useradd -m -s /bin/fish leo
+	usermod -aG sudo leo
+
+deploy: $(DFILE) install-sys-apps user
+	tar xf $(DFILE)
+# TODO
