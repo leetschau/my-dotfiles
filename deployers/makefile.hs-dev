@@ -51,7 +51,9 @@ install-sys-apps-ubuntu:
 
 install-sys-apps-archlinux:
 	pacman -S base-devel fd fish git git-delta openssh the_silver_searcher tree
-# TODO
+
+install-sys-apps-alpine:
+	lxc exec ica -- apk add sudo shadow git fish python3 delta the_silver_searcher neovim starship pipx fzf
 
 user:
 	useradd -m -s /bin/fish $(USERNAME)
@@ -75,4 +77,3 @@ deploy: $(DFILE) install-sys-apps-ubuntu user
 	cd ~/.local/bin
 	ln -s ~/.local/opt/nvim-linux64/bin/nvim nvim
 
-# TODO
