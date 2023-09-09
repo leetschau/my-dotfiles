@@ -99,6 +99,7 @@ FTYPES: Dict[str, List[str]] = {
     'r': ['R'],
     'reason': ['re'],
     'rust': ['rs'],
+    'sml': ['sml', 'fun', 'sig'],
     'sql': ['sql'],
     'zeek': ['zeek'],
 }

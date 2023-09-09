@@ -28,6 +28,7 @@ iron.setup {
       julia = { command = {"julia"} },
       python = { command = {"python"} },
       r = { command = { "radian" } },
+      sml = { command = {"sml"} },
     },
     repl_open_cmd = view.split.vertical.topleft("50%"),
   },
@@ -57,4 +58,3 @@ vim.keymap.set('n', '<space>rr', '<cmd>IronRestart<cr>')
 vim.keymap.set('n', '<space>rf', '<cmd>IronFocus<cr>')
 vim.keymap.set('n', '<space>rh', '<cmd>IronHide<cr>')
 vim.keymap.set('n', '<space>w', [[yaw<C-w><C-w>pa<cr><C-\><C-n><C-w><C-w>]])
-vim.keymap.set('n', '<space>t', '<cmd>TagbarToggle<cr>')
